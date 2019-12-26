@@ -1,5 +1,5 @@
 import cv2
-def drawHex(x, y, size, img):
+def drawHex(x, y, size, line_thick, img):
         #scale dependes on the angle of slant of the line and is the inverse tangent of the angle
         l_scale = int(size/1.73)
         size_s = size - (size/2)
@@ -9,12 +9,12 @@ def drawHex(x, y, size, img):
         y2 = y + size; y3 = y2 + size; y4 = y3; y5 = y4 - size; y6 = y
 # draw line
 # Hexagon
-        cv2.line(img,(x,y),(x+l_scale,y+size),(255,0,0),2)
-        cv2.line(img,(x2,y2),(x2-l_scale,y2+size),(255,0,0),2)
-        cv2.line(img,(x3,y3),(x3-size,y3),(255,0,0),2)
-        cv2.line(img,(x4,y4),(x4-l_scale,y4-size),(255,0,0),2)
-        cv2.line(img,(x5,y5),(x5+l_scale,y5-size),(255,0,0),2)
-        cv2.line(img,(x6,y6),(x6-size,y6),(255,0,0),2)
+        cv2.line(img,(x,y),(x+l_scale,y+size),(255,0,0),line_thick)
+        cv2.line(img,(x2,y2),(x2-l_scale,y2+size),(255,0,0),line_thick)
+        cv2.line(img,(x3,y3),(x3-size,y3),(255,0,0),line_thick)
+        cv2.line(img,(x4,y4),(x4-l_scale,y4-size),(255,0,0),line_thick)
+        cv2.line(img,(x5,y5),(x5+l_scale,y5-size),(255,0,0),line_thick)
+        cv2.line(img,(x6,y6),(x6-size,y6),(255,0,0),line_thick)
 #Name line
-        cv2.line(img,(x,y),(x+ls_scale,y-size + size_s),(255,0,0),2)
-        cv2.line(img,(x+ls_scale,y-size + size_s),(x+size*2,y-size + size_s),(255,0,0),2)
+        cv2.line(img,(x,y),(x+ls_scale,y-size + size_s),(255,0,0),line_thick)
+        cv2.line(img,(x+ls_scale,y-size + size_s),(x+size*2,y-size + size_s),(255,0,0),line_thick)
